@@ -17,14 +17,9 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  static Future<void> initGlobalConfigs() async {
-    // add here : config that runs before runApp()
-    // eg : Firebase Initialization, SystemChrome config, etc
-  }
+  static Future<void> initGlobalConfigs() async {}
 
   static Widget run() {
-    // add here :  config that runs before materialApp
-    // eg : repository providers etc.
     return const MyApp();
   }
 }

@@ -1,3 +1,1 @@
-class FONT_CONST {
-  
-}
+class FONT_CONST {}

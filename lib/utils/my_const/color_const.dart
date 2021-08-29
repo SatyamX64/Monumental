@@ -1,0 +1,3 @@
+class COLOR_CONST {
+  
+}

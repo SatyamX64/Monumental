@@ -5,8 +5,32 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  $AssetsImagesOnboardingGen get onboarding =>
+      const $AssetsImagesOnboardingGen();
+  AssetGenImage get splashBg =>
+      const AssetGenImage('assets/images/splash_bg.png');
+}
+
+class $AssetsImagesOnboardingGen {
+  const $AssetsImagesOnboardingGen();
+
+  AssetGenImage get img1 =>
+      const AssetGenImage('assets/images/onboarding/img_1.png');
+  AssetGenImage get img2 =>
+      const AssetGenImage('assets/images/onboarding/img_2.png');
+  AssetGenImage get img3 =>
+      const AssetGenImage('assets/images/onboarding/img_3.png');
+  AssetGenImage get img4 =>
+      const AssetGenImage('assets/images/onboarding/img_4.png');
+}
+
 class Assets {
   Assets._();
+
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage extends AssetImage {

@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
               padding: const EdgeInsets.only(top: 48),
               child: Text(
                 'Welcome to monumental habits',
-                style: FONT_CONST.TITLE_BOLD_40,
+                style: FONT_CONST.TITLE_REGULAR_40,
                 textAlign: TextAlign.center,
               ),
             )

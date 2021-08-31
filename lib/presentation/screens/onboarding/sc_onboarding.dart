@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monumental/app/app_router.dart';
 import 'package:monumental/gen/assets.gen.dart';
+import 'package:monumental/presentation/common_widgets/common_widgets.dart';
 import 'package:monumental/utils/my_const/my_const.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -12,6 +13,12 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final _controller = PageController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   int _currentPage = 0;
 
@@ -71,7 +78,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         Text(
                           _dataList[index].title,
                           textAlign: TextAlign.center,
-                          style: FONT_CONST.TITLE_BOLD_32,
+                          style: FONT_CONST.TITLE_REGULAR_32,
                         ),
                         Expanded(
                           child: _dataList[index].image,
@@ -86,70 +93,52 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
             Expanded(
               child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: AnimatedCrossFade(
-                    duration: const Duration(milliseconds: 200),
-                    crossFadeState: _currentPage + 1 != _dataList.length
-                        ? CrossFadeState.showFirst
-                        : CrossFadeState.showSecond,
-                    firstChild: Row(
-                      children: <Widget>[
-                        GestureDetector(
-                          onTap: finishOnBoarding,
-                          child: Text(
-                            'Skip',
-                            style: FONT_CONST.BOLD_16,
-                          ),
-                        ),
-                        const Spacer(),
-                        const SizedBox(
-                          // To balance extra 10 margin on right by last dot
-                          width: 10,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: List.generate(
-                            _dataList.length,
-                            (int index) => _buildDots(index: index),
-                          ),
-                        ),
-                        const Spacer(),
-                        GestureDetector(
-                          onTap: () {
-                            _controller.nextPage(
-                              duration: const Duration(milliseconds: 200),
-                              curve: Curves.easeIn,
-                            );
-                          },
-                          child: Text(
-                            'Next',
-                            style: FONT_CONST.BOLD_16,
-                          ),
-                        ),
-                      ],
-                    ),
-                    secondChild: SizedBox(
-                      height: 48,
-                      width: MediaQuery.of(context).size.width,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          elevation: 0,
-                          primary: COLOR_CONST.MORNING4,
-                        ),
-                        onPressed: () {
-                          Navigator.pushReplacementNamed(
-                              context, AppRouter.HOME);
-                        },
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: AnimatedCrossFade(
+                  duration: const Duration(milliseconds: 200),
+                  crossFadeState: _currentPage + 1 != _dataList.length
+                      ? CrossFadeState.showFirst
+                      : CrossFadeState.showSecond,
+                  firstChild: Row(
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: finishOnBoarding,
                         child: Text(
-                          'Get Started',
+                          'Skip',
                           style: FONT_CONST.BOLD_16,
                         ),
                       ),
-                    ),
-                  )),
+                      const Spacer(),
+                      const SizedBox(
+                        // To balance extra 10 margin on right by last dot
+                        width: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          _dataList.length,
+                          (int index) => _buildDots(index: index),
+                        ),
+                      ),
+                      const Spacer(),
+                      GestureDetector(
+                        onTap: () {
+                          _controller.nextPage(
+                            duration: const Duration(milliseconds: 200),
+                            curve: Curves.easeIn,
+                          );
+                        },
+                        child: Text(
+                          'Next',
+                          style: FONT_CONST.BOLD_16,
+                        ),
+                      ),
+                    ],
+                  ),
+                  secondChild: CustomButton(
+                      onPressed: finishOnBoarding, text: 'Get Started'),
+                ),
+              ),
             ),
           ],
         ),
@@ -182,7 +171,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   void finishOnBoarding() {
-    Navigator.pushReplacementNamed(context, AppRouter.HOME);
+    Navigator.pushReplacementNamed(context, AppRouter.LOGIN);
   }
 }
 

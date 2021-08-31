@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:monumental/presentation/custom_ui/custom_ui.dart';
 
 // ignore: avoid_classes_with_only_static_members, camel_case_types
@@ -9,7 +10,10 @@ class COLOR_CONST {
   static final MORNING2 = HexColor('FC9D45');
   static final MORNING3 = HexColor('F9B566');
   static final MORNING4 = HexColor('FDA758');
-  
+
   static final FOG = HexColor('FFDEEF');
   static final ECLIPSE = HexColor('573353');
+
+  static final CREAM1 = HexColor('FFF3E9');
+  static final CREAM2 = HexColor('FFF6ED');
 }

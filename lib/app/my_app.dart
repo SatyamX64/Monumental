@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monumental/app/app_config.dart';
 import 'package:monumental/app/app_router.dart';
+import 'package:monumental/utils/my_const/color_const.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -13,7 +14,9 @@ class MyApp extends StatelessWidget {
       initialRoute: appConfig.initialRoute,
       onGenerateRoute: AppRouter.generateRoute,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(),
+      theme: ThemeData(
+        scaffoldBackgroundColor: COLOR_CONST.CREAM1,
+      ),
     );
   }
 

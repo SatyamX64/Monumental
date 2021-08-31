@@ -8,10 +8,20 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
   $AssetsImagesOnboardingGen get onboarding =>
       const $AssetsImagesOnboardingGen();
   AssetGenImage get splashBg =>
       const AssetGenImage('assets/images/splash_bg.png');
+}
+
+class $AssetsImagesIconsGen {
+  const $AssetsImagesIconsGen();
+
+  AssetGenImage get facebook =>
+      const AssetGenImage('assets/images/icons/facebook.png');
+  AssetGenImage get google =>
+      const AssetGenImage('assets/images/icons/google.png');
 }
 
 class $AssetsImagesOnboardingGen {

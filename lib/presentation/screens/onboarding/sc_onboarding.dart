@@ -3,6 +3,7 @@ import 'package:monumental/app/app_router.dart';
 import 'package:monumental/gen/assets.gen.dart';
 import 'package:monumental/presentation/common_widgets/common_widgets.dart';
 import 'package:monumental/utils/my_const/my_const.dart';
+import 'package:sizer/sizer.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -26,13 +27,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     textAlign: TextAlign.center,
     text: TextSpan(
       text: 'WE CAN',
-      style: FONT_CONST.BOLD_17,
+      style: FONT_CONST.BOLD_14,
       children: <TextSpan>[
-        TextSpan(text: ' HELP YOU ', style: FONT_CONST.BOLD_17_MORNING2),
+        TextSpan(text: ' HELP YOU ', style: FONT_CONST.BOLD_14_MORNING2),
         const TextSpan(
           text: 'TO BE A BETTER VERSION OF',
         ),
-        TextSpan(text: ' YOURSELF.', style: FONT_CONST.BOLD_17_MORNING2),
+        TextSpan(text: ' YOURSELF.', style: FONT_CONST.BOLD_14_MORNING2),
       ],
     ),
   );
@@ -71,14 +72,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 40),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 20.sp, vertical: 40.sp),
                     child: Column(
                       children: <Widget>[
                         Text(
                           _dataList[index].title,
                           textAlign: TextAlign.center,
-                          style: FONT_CONST.TITLE_REGULAR_32,
+                          style: FONT_CONST.TITLE_REGULAR_24,
                         ),
                         Expanded(
                           child: _dataList[index].image,
@@ -93,7 +94,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 20.sp),
                 child: AnimatedCrossFade(
                   duration: const Duration(milliseconds: 200),
                   crossFadeState: _currentPage + 1 != _dataList.length
@@ -105,7 +106,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         onTap: finishOnBoarding,
                         child: Text(
                           'Skip',
-                          style: FONT_CONST.BOLD_16,
+                          style: FONT_CONST.BOLD_12,
                         ),
                       ),
                       const Spacer(),
@@ -130,7 +131,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         },
                         child: Text(
                           'Next',
-                          style: FONT_CONST.BOLD_16,
+                          style: FONT_CONST.BOLD_12,
                         ),
                       ),
                     ],
@@ -164,9 +165,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             _currentPage == index ? COLOR_CONST.ECLIPSE : COLOR_CONST.MORNING3,
       ),
       margin: const EdgeInsets.only(right: 10),
-      height: _currentPage == index ? 13 : 11,
+      height: _currentPage == index ? 11.sp : 9.sp,
       curve: Curves.easeIn,
-      width: _currentPage == index ? 13 : 11,
+      width: _currentPage == index ? 11.sp : 9.sp,
     );
   }
 

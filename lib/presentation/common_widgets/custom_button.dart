@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monumental/utils/my_const/font_const.dart';
 import 'package:monumental/utils/my_const/my_const.dart';
+import 'package:sizer/sizer.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
@@ -13,7 +14,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
+      height: 40.sp,
       width: double.maxFinite,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -26,7 +27,7 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: FONT_CONST.BOLD_16,
+          style: FONT_CONST.BOLD_12,
         ),
       ),
     );

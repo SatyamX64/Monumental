@@ -8,7 +8,7 @@ Future<void> main() async {
   await MyApp.initGlobalConfigs();
   runApp(AppConfig(
     name: 'Monumental',
-    initialRoute: AppRouter.SPLASH,
+    initialRoute: AppRouter.LOGIN,
     flavour: Flavour.developement,
     child: MyApp.run(),
   ));

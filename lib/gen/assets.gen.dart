@@ -11,6 +11,8 @@ class $AssetsImagesGen {
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
   $AssetsImagesOnboardingGen get onboarding =>
       const $AssetsImagesOnboardingGen();
+  AssetGenImage get registerHeader =>
+      const AssetGenImage('assets/images/register_header.png');
   AssetGenImage get splashBg =>
       const AssetGenImage('assets/images/splash_bg.png');
 }

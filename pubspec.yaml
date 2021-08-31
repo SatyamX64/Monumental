@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   lint: ^1.6.0
   introduction_screen: ^2.1.0
+  sizer: ^2.0.13
 
 dev_dependencies:
   build_runner:

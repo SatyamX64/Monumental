@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monumental/gen/assets.gen.dart';
 import 'package:monumental/presentation/common_widgets/common_widgets.dart';
+import 'package:sizer/sizer.dart';
 
 class FacebookLoginBtn extends StatelessWidget {
   const FacebookLoginBtn({Key? key}) : super(key: key);
@@ -8,9 +9,9 @@ class FacebookLoginBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: 16.sp),
       child: SocialLoginBtn(
-        image: Assets.images.icons.facebook.image(height: 23, width: 23),
+        image: Assets.images.icons.facebook.image(),
         text: 'Continue with Facebook',
         onPressed: () {},
       ),

@@ -4,10 +4,14 @@
 /// *****************************************************
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  AssetGenImage get forgotPass =>
+      const AssetGenImage('assets/images/forgot_pass.png');
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
   $AssetsImagesOnboardingGen get onboarding =>
       const $AssetsImagesOnboardingGen();
@@ -20,6 +24,7 @@ class $AssetsImagesGen {
 class $AssetsImagesIconsGen {
   const $AssetsImagesIconsGen();
 
+  SvgGenImage get back => const SvgGenImage('assets/images/icons/back.svg');
   AssetGenImage get facebook =>
       const AssetGenImage('assets/images/icons/facebook.png');
   AssetGenImage get google =>
@@ -92,4 +97,49 @@ class AssetGenImage extends AssetImage {
   }
 
   String get path => assetName;
+}
+
+class SvgGenImage {
+  const SvgGenImage(this._assetName);
+
+  final String _assetName;
+
+  SvgPicture svg({
+    Key? key,
+    bool matchTextDirection = false,
+    AssetBundle? bundle,
+    String? package,
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+    bool allowDrawingOutsideViewBox = false,
+    WidgetBuilder? placeholderBuilder,
+    Color? color,
+    BlendMode colorBlendMode = BlendMode.srcIn,
+    String? semanticsLabel,
+    bool excludeFromSemantics = false,
+    Clip clipBehavior = Clip.hardEdge,
+  }) {
+    return SvgPicture.asset(
+      _assetName,
+      key: key,
+      matchTextDirection: matchTextDirection,
+      bundle: bundle,
+      package: package,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
+      placeholderBuilder: placeholderBuilder,
+      color: color,
+      colorBlendMode: colorBlendMode,
+      semanticsLabel: semanticsLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      clipBehavior: clipBehavior,
+    );
+  }
+
+  String get path => _assetName;
 }

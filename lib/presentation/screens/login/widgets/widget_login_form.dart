@@ -51,10 +51,15 @@ class LoginForm extends StatelessWidget {
           SizedBox(
             height: 14.sp,
           ),
-          Text(
-            'Forgot Password?',
-            style: FONT_CONST.MEDIUM_11
-                .copyWith(decoration: TextDecoration.underline),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed(AppRouter.FORGOT_PASS);
+            },
+            child: Text(
+              'Forgot Password?',
+              style: FONT_CONST.MEDIUM_11
+                  .copyWith(decoration: TextDecoration.underline),
+            ),
           ),
           SizedBox(
             height: 6.sp,

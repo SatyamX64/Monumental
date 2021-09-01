@@ -6,10 +6,12 @@ import 'app/app_router.dart';
 
 Future<void> main() async {
   await MyApp.initGlobalConfigs();
-  runApp(AppConfig(
-    name: 'Monumental',
-    initialRoute: AppRouter.LOGIN,
-    flavour: Flavour.developement,
-    child: MyApp.run(),
-  ));
+  runApp(
+    AppConfig(
+      name: 'Monumental',
+      initialRoute: AppRouter.SPLASH,
+      flavour: Flavour.developement,
+      child: MyApp.run(),
+    ),
+  );
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:monumental/presentation/screens/forgot_pass/sc_forgot_pass.dart';
 import 'package:monumental/presentation/screens/home/sc_home.dart';
 import 'package:monumental/presentation/screens/login/sc_login.dart';
 import 'package:monumental/presentation/screens/onboarding/sc_onboarding.dart';
@@ -10,6 +11,7 @@ class AppRouter {
   static const ONBOARDING = '/onboarding';
   static const LOGIN = '/login';
   static const REGISTER = '/register';
+  static const FORGOT_PASS = 'forgot-password';
   static const HOME = '/home';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -22,6 +24,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const LoginScreen());
       case REGISTER:
         return MaterialPageRoute(builder: (_) => const RegisterScreen());
+      case FORGOT_PASS:
+        return MaterialPageRoute(builder: (_) => const ForgotPassScreen());
       case HOME:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       default:
